@@ -1,19 +1,16 @@
-let tamAd = prompt("Lütfən tam adınızı «AD SOYAD» formatında daxil edin:");
+const str = prompt("Zəhmət olmasa bir mətn daxil edin:");
 
-if (tamAd) {
-    let hisseler = tamAd.trim().split(" ");
+const length = str.length;
+console.log("1. Mətnin uzunluğu:", length);
 
-    if (hisseler.length >= 2) {
-        let ad = hisseler[0];
-        let soyad = hisseler[1];
+const hasE = str.includes("e");
+console.log("2. 'e' hərfi var?:", hasE);
 
-        let yeniFormat = `${soyad} ${ad}`;
+const startsWithCode = str.startsWith("code");
+console.log("3. 'code' sözü ilə başlayır?:", startsWithCode);
 
-        console.log("Daxil edilən:", tamAd);
-        console.log("Nəticə («SOYAD AD»):", yeniFormat);
-    } else {
-        console.log("Xəta: Ad və soyad arasında boşluq qoyaraq daxil edin.");
-    }
-} else {
-    console.log("Məlumat daxil edilmədi.");
-}
+const endsWithCode = str.endsWith("code");
+console.log("4. 'code' sözü ilə bitir?:", endsWithCode);
+
+const replacedStr = str.replaceAll("t", "####");
+console.log("5. Dəyişdirilmiş mətn:", replacedStr);
