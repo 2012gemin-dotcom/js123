@@ -1,16 +1,15 @@
-const str = prompt("Zəhmət olmasa bir mətn daxil edin:");
 
-const length = str.length;
-console.log("1. Mətnin uzunluğu:", length);
+let daxilEdilen = prompt("Lütfən 4 rəqəmli ədəd daxil edin:");
 
-const hasE = str.includes("e");
-console.log("2. 'e' hərfi var?:", hasE);
+if (daxilEdilen && daxilEdilen.length === 4 && !isNaN(daxilEdilen)) {
+    let cem = 0;
 
-const startsWithCode = str.startsWith("code");
-console.log("3. 'code' sözü ilə başlayır?:", startsWithCode);
+    for (let i = 0; i < daxilEdilen.length; i++) {
+        cem += parseInt(daxilEdilen[i]);
+    }
 
-const endsWithCode = str.endsWith("code");
-console.log("4. 'code' sözü ilə bitir?:", endsWithCode);
-
-const replacedStr = str.replaceAll("t", "####");
-console.log("5. Dəyişdirilmiş mətn:", replacedStr);
+    console.log("Daxil edilən ədəd:", daxilEdilen);
+    console.log("Rəqəmlərin cəmi:", cem);
+} else {
+    console.log("Xəta: Lütfən dəqiq 4 rəqəmdən ibarət ədəd daxil edin!");
+}
